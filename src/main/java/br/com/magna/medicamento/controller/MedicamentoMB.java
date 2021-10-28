@@ -27,21 +27,35 @@ public class MedicamentoMB implements Serializable {
 	@Inject
 	private MedicamentoService service;
 	
+	@Inject
+	private MarcaService marcaService;
+	
+	@Inject
+	private Marca marca = new Marca();
+
+
 	private List<Medicamento> medicamentos;
 	
+
+	
+	
+
 
 
 	@PostConstruct
 	public void carregar() {
+		
 		medicamentos = service.todosOsMedicamentos();
 	
 	}
+	
+	
 
 	public void adicionar() {
 		try {
+			
 			service.salvar(medicamento);
-		
-
+			marca = new Marca();
 			medicamento = new Medicamento();
 		
 
@@ -68,6 +82,13 @@ public class MedicamentoMB implements Serializable {
 	}
 
 
+	public Marca getMarca() {
+		return marca;
+	}
+	
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
 
 	public Medicamento getMedicamento() {
 		return medicamento;
@@ -80,6 +101,8 @@ public class MedicamentoMB implements Serializable {
 	public List<Medicamento> getMedicamentos() {
 		return medicamentos;
 	}
+	
+	
 
 
 }

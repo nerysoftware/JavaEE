@@ -17,6 +17,7 @@ public class DAO<T extends Base> implements Serializable {
 	public T buscarPorId(Class<T> clazz, Long id) {
 		return manager.find(clazz, id);
 	}
+	
 
 	public void salvar(T t) {
 		try {
@@ -61,5 +62,8 @@ public class DAO<T extends Base> implements Serializable {
 		Query query = manager.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+
+	
 
 }

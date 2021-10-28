@@ -30,6 +30,7 @@ public class MarcaMB implements Serializable {
 	@PostConstruct
 	public void carregarMarca() {
 		marcas = service.todosAsMarcas();
+		System.out.println("carregarMarca chamado!!!");
 	}
 	
 	public void adicionar() {

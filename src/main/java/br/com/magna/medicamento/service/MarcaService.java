@@ -21,7 +21,7 @@ public class MarcaService implements Serializable {
 		if (m.getNome().length() < 3) {
 			throw new NegocioException("O nome do medicamento não poder ter menos que 3 caracteres");
 		}
-
+		System.out.println("Marca foi salva");
 		dao.salvar(m);
 	}
 

@@ -2,10 +2,14 @@ package br.com.magna.medicamento.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,9 +28,29 @@ public class Medicamento implements Serializable, Base{
 	private String registro;
 	private BigDecimal preco;
 	
+	@ManyToOne
+	private Marca marca = new Marca();
+	
+//	@ManyToMany
+//	private List<Marca> marcas = new ArrayList<>();
+//	
+	
+//	public List<Marca> getMarcas() {
+//		return marcas;
+//	}
+//	public void setMarcas(List<Marca> marcas) {
+//		this.marcas = marcas;
+//	}
+	
 	
 	public Long getId() {
 		return id;
+	}
+	public Marca getMarca() {
+		return marca;
+	}
+	public void setMarca(Marca marca) {
+		this.marca = marca;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -85,6 +109,9 @@ public class Medicamento implements Serializable, Base{
 			return false;
 		return true;
 	}
+	
+	
+
 	
 	
 

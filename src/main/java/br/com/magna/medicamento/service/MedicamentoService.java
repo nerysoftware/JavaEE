@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import br.com.magna.medicamento.dao.DAO;
+import br.com.magna.medicamento.model.Marca;
 import br.com.magna.medicamento.model.Medicamento;
 import br.com.magna.medicamento.utily.NegocioException;
 
@@ -15,6 +16,9 @@ public class MedicamentoService implements Serializable {
 
 	@Inject
 	private DAO<Medicamento> dao;
+	
+	@Inject
+	private DAO<Marca> daoMarca;
 
 	public void salvar(Medicamento m) throws NegocioException {
 		
@@ -32,5 +36,7 @@ public class MedicamentoService implements Serializable {
 	public List<Medicamento> todosOsMedicamentos() {
 		return dao.buscarTodos("select m from Medicamento m order by m.nome");
 	}
+	
+
 
 }
