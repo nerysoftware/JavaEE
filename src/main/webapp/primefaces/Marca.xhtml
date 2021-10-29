@@ -12,11 +12,12 @@
 			<p:panelGrid columns="2">
 			
 			<p:outputLabel value = "Nome da Marca"/>
+				
+			<p:button size="30" value= "Tela Principal" outcome="/primefaces/Medicamento.xhtml"/>
 			<p:inputText size="30" value="#{marcaMB.marca.nome}" required="true" lable="Marca"/>
 		
-			<p:commandButton value="Cadastrar" action="#{marcaMB.adicionar}" update="frm tabela" style="margin"/>
-			
-			<p:button size="30" value= "Medicamentos" outcome="/primefaces/Medicamento.xhtml"/>
+			<p:commandButton value="Cadastrar Marca" action="#{marcaMB.adicionar}" update="frm tabela" style="margin"/>
+		
 				
 			</p:panelGrid>
 			

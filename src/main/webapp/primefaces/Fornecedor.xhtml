@@ -10,13 +10,14 @@
 		<h:form id="frm">
 
 			<p:panelGrid columns="2">
-			
-			<p:outputLabel value = "Nome do Fornecedor"/>
-			<p:inputText size="30" value="#{fornecedorMB.fornecedor.nome}" required="true" lable="Marca"/>
-		
-			<p:commandButton value="Cadastrar" action="#{fornecedorMB.adicionar}" update="frm tabela" style="margin"/>
 				
-				<p:button size="10" value= "Medicamentos" outcome="/primefaces/Marca.xhtml"/>
+			<p:outputLabel value = "Nome do Fornecedor"/>
+				<p:button size="10" value= "Tela principal" outcome="/primefaces/Medicamento.xhtml"/>
+			<p:inputText size="30" value="#{fornecedorMB.fornecedor.nome}" required="true" lable="Marca"/>
+			
+			<p:commandButton value="Cadastrar Fornecedor" action="#{fornecedorMB.adicionar}" update="frm tabela" style="margin"/>
+		
+			
 			</p:panelGrid>
 			
 			<p:dataTable value="#{fornecedorMB.fornecedors}" var="m" id="tabela" paginator="true" rows="5">
@@ -33,7 +34,9 @@
 					<p:commandButton action="#{fornecedorMB.excluir}" icon="ui-icon-trash" update="tabela" process="@this">
 					<f:setPropertyActionListener value="#{m}" target="#{fornecedorMB.fornecedor}"/>
 				</p:commandButton>
+				
 			</p:column>
+			
 			
 			
 			</p:dataTable>
