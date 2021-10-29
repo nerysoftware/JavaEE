@@ -31,18 +31,19 @@ public class Medicamento implements Serializable, Base{
 	@ManyToOne
 	private Marca marca = new Marca();
 	
-//	@ManyToMany
-//	private List<Marca> marcas = new ArrayList<>();
-//	
-	
-//	public List<Marca> getMarcas() {
-//		return marcas;
-//	}
-//	public void setMarcas(List<Marca> marcas) {
-//		this.marcas = marcas;
-//	}
+	@ManyToOne
+	private Fornecedor fornecedor = new Fornecedor();
 	
 	
+	
+	
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -16,6 +16,7 @@
 		
 			<p:commandButton value="Cadastrar" action="#{fornecedorMB.adicionar}" update="frm tabela" style="margin"/>
 				
+				<p:button size="10" value= "Medicamentos" outcome="/primefaces/Marca.xhtml"/>
 			</p:panelGrid>
 			
 			<p:dataTable value="#{fornecedorMB.fornecedors}" var="m" id="tabela" paginator="true" rows="5">

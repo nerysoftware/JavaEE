@@ -16,9 +16,7 @@ public class MedicamentoService implements Serializable {
 
 	@Inject
 	private DAO<Medicamento> dao;
-	
-	@Inject
-	private DAO<Marca> daoMarca;
+
 
 	public void salvar(Medicamento m) throws NegocioException {
 		

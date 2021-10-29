@@ -8,9 +8,9 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import br.com.magna.medicamento.model.Fornecedor;
 import br.com.magna.medicamento.model.Marca;
 import br.com.magna.medicamento.model.Medicamento;
-import br.com.magna.medicamento.service.MarcaService;
 import br.com.magna.medicamento.service.MedicamentoService;
 import br.com.magna.medicamento.utily.Message;
 import br.com.magna.medicamento.utily.NegocioException;
@@ -26,20 +26,15 @@ public class MedicamentoMB implements Serializable {
 
 	@Inject
 	private MedicamentoService service;
-	
-	@Inject
-	private MarcaService marcaService;
+
 	
 	@Inject
 	private Marca marca = new Marca();
+	
 
 
 	private List<Medicamento> medicamentos;
 	
-
-	
-	
-
 
 
 	@PostConstruct
@@ -89,6 +84,7 @@ public class MedicamentoMB implements Serializable {
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
+	
 
 	public Medicamento getMedicamento() {
 		return medicamento;
