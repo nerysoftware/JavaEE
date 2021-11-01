@@ -35,7 +35,7 @@
 				<h:selectOneMenu value="#{medicamentoMB.medicamento.marca.id}"
 					lable="Marca">
 					<f:selectItem itemLabel="Selecione uma marca"
-						noSelectionOption="true" />
+						noSelectionOption="true" />						
 					<f:selectItems value="#{marcaMB.marcas}" var="user"
 						itemValue="#{user.id}" itemLabel="#{user.nome}" />
 					<p:button value= "Cadastrar Marca" outcome="/primefaces/Marca.xhtml"
@@ -82,14 +82,16 @@
 				</p:column>
 
 				<p:column headerText="Apresentação">
-					<p:outputLabel value="#{m.apresentacao}" />
+					<p:outputLabel value="#{m.apresentacao}"/>
 				</p:column>
 
 				<p:column headerText="Marca">
-					<p:outputLabel value="#{m.marca.nome}" />
+				<p:outputLabel value="#{m.marca.id}"/>
+					<p:outputLabel value="#{m.marca.nome}"/>
 				</p:column>
 
 				<p:column headerText="Fornecedor">
+					<p:outputLabel value="#{m.fornecedor.id}"/>
 					<p:outputLabel value="#{m.fornecedor.nome}" />
 				</p:column>
 
